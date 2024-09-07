@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('img2.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#todo-form {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#todo-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#todo-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+#todo-form button:hover {
+    background-color: #45a049;
+}
+
+.sticky-notes {
+    display: block; /* Ensures vertical layout for the notes */
+}
+
+.sticky-note {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffd700;
+    position: relative; /* Needed for positioning children */
+}
+
+.sticky-note.completed {
+    opacity: 0.7;
+}
+
+.sticky-note .task-content {
+    display: flex;
+    align-items: center;
+}
+
+.sticky-note .checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 20px; /* Size of the checkbox */
+    height: 20px; /* Size of the checkbox */
+}
+
+.sticky-note p {
+    font-size: 16px;
+    margin: 0;
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+.sticky-note.completed p {
+    text-decoration: line-through;
+}
+
+.sticky-note button {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sticky-note button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .sticky-note {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #todo-form {
+        flex-direction: column;
+    }
+
+    #todo-input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    #todo-form button {
+        border-radius: 4px;
+        width: 100%;
+    }
+}
